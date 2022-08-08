@@ -3,6 +3,12 @@ package com.ll.exam.ssb;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
 @Controller
 public class MainController {
     private int increaseNo = -1;
@@ -49,26 +55,53 @@ public class MainController {
 
     @GetMapping("/plus")
     @ResponseBody
-    public String showPlus1(@RequestParam(defaultValue = "0") int a, int b) {
-        return """
-                <h1>%d</h1>
-                """.formatted(a + b);
+    public int showPlus(int a, int b) {
+        return a + b;
+    }
+
+    @GetMapping("/plus2")
+    @ResponseBody
+    public void showPlus2(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        int a = Integer.parseInt(req.getParameter("a"));
+        int b = Integer.parseInt(req.getParameter("b"));
+
+        resp.getWriter().append(a + b + "");
     }
 
     @GetMapping("/minus")
     @ResponseBody
-    public String showMin(@RequestParam(defaultValue = "0") int a, int b) {
-        return """
-                <h1>%d</h1>
-                """.formatted(a - b);
+    public int showMinus(int a, int b) {
+        return a - b;
     }
 
-
-    @GetMapping("/increase")
+    @GetMapping("/gugudan")
     @ResponseBody
-    public int showIncrease() {
-        increaseNo++;
+    public String showGugudan(Integer dan, Integer limit) {
+        if (limit == null) {
+            limit = 9;
+        }
 
-        return increaseNo;
+        if (dan == null) {
+            dan = 9;
+        }
+
+        Integer finalDan = dan;
+        return IntStream.rangeClosed(1, limit)
+                .mapToObj(i -> "%d * %d = %d".formatted(finalDan, i, finalDan * i))
+                .collect(Collectors.joining("<br>\n"));
+    }
+
+    @GetMapping("/mbti/{name}")
+    @ResponseBody
+    public String showMbti(@PathVariable String name) {
+        return switch (name) {
+            case "홍길순" -> {
+                char j = 'J';
+                yield "INF" + j;
+            }
+            case "임꺽정" -> "ENFP";
+            case "장희성", "홍길동" -> "INFP";
+            default -> "모름";
+        };
     }
 }
