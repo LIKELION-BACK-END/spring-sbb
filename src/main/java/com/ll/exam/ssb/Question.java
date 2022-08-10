@@ -22,5 +22,5 @@ public class Question {
     private String content;
 
     @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
-    private List<Answer> answerList;
+    private List<Answer> answerLis;
 }
