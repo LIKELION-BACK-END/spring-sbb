@@ -1,12 +1,13 @@
-package com.ll.exam.ssb;
+package com.ll.exam.sbb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SsbApplication {
+public class SbbApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SsbApplication.class, args);
+		SpringApplication.run(SbbApplication.class, args);
 	}
+
 }

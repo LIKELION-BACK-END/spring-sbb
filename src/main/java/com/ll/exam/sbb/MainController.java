@@ -1,4 +1,4 @@
-package com.ll.exam.ssb;
+package com.ll.exam.sbb;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
