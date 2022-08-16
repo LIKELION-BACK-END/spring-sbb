@@ -1,0 +1,57 @@
+Index: src/main/java/com/ll/exam/sbb/question/QuestionController.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.ll.exam.sbb.question;\n\nimport lombok.RequiredArgsConstructor;\nimport org.springframework.beans.factory.annotation.Autowired;\nimport org.springframework.stereotype.Controller;\nimport org.springframework.ui.Model;\nimport org.springframework.web.bind.annotation.RequestMapping;\nimport org.springframework.web.bind.annotation.ResponseBody;\n\nimport java.util.List;\n\n@Controller\n@RequiredArgsConstructor // 생성자 주입\npublic class QuestionController {\n    // @Autowired // 필드 주입\n    private final QuestionService questionService;\n\n    @RequestMapping(\"/question/list\")\n    // 이 자리에 @ResponseBody가 없으면 resources/question_list/question_list.html 파일을 뷰로 삼는다.\n    public String list(Model model) {\n        List<Question> questionList = this.questionService.getList();\n\n        // 미래에 실행된 question_list.html 에서\n        // questionList 라는 이름으로 questionList 변수를 사용할 수 있다.\n        model.addAttribute(\"questionList\", questionList);\n\n        return \"question_list\";\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ll/exam/sbb/question/QuestionController.java b/src/main/java/com/ll/exam/sbb/question/QuestionController.java
+--- a/src/main/java/com/ll/exam/sbb/question/QuestionController.java	(revision 944bd241f5d519768ce3653af4920eb1b3d9ea06)
++++ b/src/main/java/com/ll/exam/sbb/question/QuestionController.java	(date 1660623071833)
+@@ -4,6 +4,7 @@
+ import org.springframework.beans.factory.annotation.Autowired;
+ import org.springframework.stereotype.Controller;
+ import org.springframework.ui.Model;
++import org.springframework.web.bind.annotation.PathVariable;
+ import org.springframework.web.bind.annotation.RequestMapping;
+ import org.springframework.web.bind.annotation.ResponseBody;
+ 
+@@ -26,4 +27,9 @@
+ 
+         return "question_list";
+     }
++
++    @RequestMapping(value = "/question/detail/{id}")
++    public String detail(Model model, @PathVariable("id") Integer id) {
++        return "question_detail";
++    }
+ }
+Index: src/main/resources/templates/question_detail.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/templates/question_detail.html b/src/main/resources/templates/question_detail.html
+new file mode 100644
+--- /dev/null	(date 1660623088276)
++++ b/src/main/resources/templates/question_detail.html	(date 1660623088276)
+@@ -0,0 +1,1 @@
++<h1>dd</h1>
+\ No newline at end of file
+Index: src/main/java/com/ll/exam/sbb/question/DataNotFoundException.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/ll/exam/sbb/question/DataNotFoundException.java b/src/main/java/com/ll/exam/sbb/question/DataNotFoundException.java
+new file mode 100644
+--- /dev/null	(date 1660623044396)
++++ b/src/main/java/com/ll/exam/sbb/question/DataNotFoundException.java	(date 1660623044396)
+@@ -0,0 +1,7 @@
++package com.ll.exam.sbb.question;
++
++public class DataNotFoundException extends Throwable {
++    public DataNotFoundException(String question_not_found) {
++
++    }
++}
