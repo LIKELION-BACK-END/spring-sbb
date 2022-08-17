@@ -1,0 +1,937 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ll.exam.sbb.QuestionRepositoryTests" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-08-16T06:23:04" hostname="bag-yeongseung-ui-MacBookPro-2.local" time="0.41">
+  <properties/>
+  <testcase name="findAll()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.221"/>
+  <testcase name="findBySubject()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.039"/>
+  <testcase name="findBySubjectLike()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.031"/>
+  <testcase name="삭제()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.043"/>
+  <testcase name="수정()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.029"/>
+  <testcase name="저장()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.021"/>
+  <testcase name="findBySubjectAndContent()" classname="com.ll.exam.sbb.QuestionRepositoryTests" time="0.021"/>
+  <system-out><![CDATA[15:23:02.232 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+15:23:02.237 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+15:23:02.252 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.ll.exam.sbb.QuestionRepositoryTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+15:23:02.257 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ll.exam.sbb.QuestionRepositoryTests], using SpringBootContextLoader
+15:23:02.258 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ll.exam.sbb.QuestionRepositoryTests]: class path resource [com/ll/exam/sbb/QuestionRepositoryTests-context.xml] does not exist
+15:23:02.258 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ll.exam.sbb.QuestionRepositoryTests]: class path resource [com/ll/exam/sbb/QuestionRepositoryTestsContext.groovy] does not exist
+15:23:02.258 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.ll.exam.sbb.QuestionRepositoryTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+15:23:02.259 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.ll.exam.sbb.QuestionRepositoryTests]: QuestionRepositoryTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:23:02.277 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.ll.exam.sbb.QuestionRepositoryTests]
+15:23:02.305 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/Users/park/Documents/spring/spring-sbb/build/classes/java/main/com/ll/exam/sbb/SbbApplication.class]
+15:23:02.306 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.ll.exam.sbb.SbbApplication for test class com.ll.exam.sbb.QuestionRepositoryTests
+15:23:02.340 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.ll.exam.sbb.QuestionRepositoryTests]: using defaults.
+15:23:02.340 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.event.ApplicationEventsTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+15:23:02.347 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@50fe837a, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@3a62c01e, org.springframework.test.context.event.ApplicationEventsTestExecutionListener@7a8fa663, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5ce33a58, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@78a287ed, org.springframework.test.context.support.DirtiesContextTestExecutionListener@546ccad7, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5357c287, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@1623134f, org.springframework.test.context.event.EventPublishingTestExecutionListener@7a527389, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@485a3466, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@25748410, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@2b43529a, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4264b240, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@5b04476e, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5ad10c1a]
+15:23:02.348 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@5d018107 testClass = QuestionRepositoryTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@6cbcf243 testClass = QuestionRepositoryTests, locations = '{}', classes = '{class com.ll.exam.sbb.SbbApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.actuate.metrics.MetricsExportContextCustomizerFactory$DisableMetricExportContextCustomizer@49c66ade, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@15713d56, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@d41f816, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@3d9c13b5, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@7a362b6b, org.springframework.boot.test.context.SpringBootTestArgs@1, org.springframework.boot.test.context.SpringBootTestWebEnvironment@1ebd319f], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+?[32m :: Spring Boot :: ?[39m              ?[2m (v2.7.2)?[0;39m
+
+?[2m2022-08-16 15:23:02.483?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mcom.ll.exam.sbb.QuestionRepositoryTests ?[0;39m ?[2m:?[0;39m Starting QuestionRepositoryTests using Java 17.0.3.1 on bag-yeongseung-ui-MacBookPro-2.local with PID 37856 (started by park in /Users/park/Documents/spring/spring-sbb)
+?[2m2022-08-16 15:23:02.483?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mcom.ll.exam.sbb.QuestionRepositoryTests ?[0;39m ?[2m:?[0;39m No active profile set, falling back to 1 default profile: "default"
+?[2m2022-08-16 15:23:02.719?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36m.s.d.r.c.RepositoryConfigurationDelegate?[0;39m ?[2m:?[0;39m Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+?[2m2022-08-16 15:23:02.741?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36m.s.d.r.c.RepositoryConfigurationDelegate?[0;39m ?[2m:?[0;39m Finished Spring Data repository scanning in 19 ms. Found 2 JPA repository interfaces.
+?[2m2022-08-16 15:23:02.959?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.hibernate.jpa.internal.util.LogHelper ?[0;39m ?[2m:?[0;39m HHH000204: Processing PersistenceUnitInfo [name: default]
+?[2m2022-08-16 15:23:02.977?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36morg.hibernate.Version                   ?[0;39m ?[2m:?[0;39m HHH000412: Hibernate ORM core version 5.6.10.Final
+?[2m2022-08-16 15:23:03.046?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.hibernate.annotations.common.Version  ?[0;39m ?[2m:?[0;39m HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+?[2m2022-08-16 15:23:03.083?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mcom.zaxxer.hikari.HikariDataSource      ?[0;39m ?[2m:?[0;39m HikariPool-1 - Starting...
+?[2m2022-08-16 15:23:03.262?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mcom.zaxxer.hikari.HikariDataSource      ?[0;39m ?[2m:?[0;39m HikariPool-1 - Start completed.
+?[2m2022-08-16 15:23:03.274?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36morg.hibernate.dialect.Dialect           ?[0;39m ?[2m:?[0;39m HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+?[2m2022-08-16 15:23:03.527?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.e.t.j.p.i.JtaPlatformInitiator      ?[0;39m ?[2m:?[0;39m HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+?[2m2022-08-16 15:23:03.531?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mj.LocalContainerEntityManagerFactoryBean?[0;39m ?[2m:?[0;39m Initialized JPA EntityManagerFactory for persistence unit 'default'
+?[2m2022-08-16 15:23:03.785?[0;39m ?[33m WARN?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mJpaBaseConfiguration$JpaWebConfiguration?[0;39m ?[2m:?[0;39m spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+?[2m2022-08-16 15:23:04.027?[0;39m ?[32m INFO?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mcom.ll.exam.sbb.QuestionRepositoryTests ?[0;39m ?[2m:?[0;39m Started QuestionRepositoryTests in 1.664 seconds (JVM running for 2.118)
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.145?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.147?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.148?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:21:30.560462]
+?[2m2022-08-16 15:23:04.148?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.149?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.149?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.149?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:21:30.561921]
+?[2m2022-08-16 15:23:04.149?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.159?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.163?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.164?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_0_1_] : [VARCHAR]) - [sbb는 질문답변 게시판 입니다.]
+?[2m2022-08-16 15:23:04.164?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_0_1_] : [TIMESTAMP]) - [2022-08-16T15:21:30.563277]
+?[2m2022-08-16 15:23:04.164?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_0_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_0_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_0_1_] : [VARCHAR]) - [sbb에서는 주로 스프링부트관련 내용을 다룹니다.]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_0_1_] : [TIMESTAMP]) - [2022-08-16T15:21:30.563287]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.165?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_0_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.166?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_0_] : [INTEGER]) - [2]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.168?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+?[2m2022-08-16 15:23:04.169?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_1_] : [INTEGER]) - [3]
+?[2m2022-08-16 15:23:04.169?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_0_1_] : [VARCHAR]) - [네 자동으로 생성됩니다.]
+?[2m2022-08-16 15:23:04.170?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_0_1_] : [TIMESTAMP]) - [2022-08-16T15:22:40.054841]
+?[2m2022-08-16 15:23:04.170?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.170?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_0_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.170?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_0_] : [INTEGER]) - [3]
+Hibernate: 
+    /* delete com.ll.exam.sbb.answer.Answer */ delete 
+        from
+            answer 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.175?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.answer.Answer */ delete 
+        from
+            answer 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.179?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.184?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.answer.Answer */ delete 
+        from
+            answer 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.187?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [3]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.190?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.210?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.210?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.207177]
+?[2m2022-08-16 15:23:04.210?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.216?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.216?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.215352]
+?[2m2022-08-16 15:23:04.216?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.227?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.207177]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.215352]
+?[2m2022-08-16 15:23:04.228?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.207177]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.215352]
+?[2m2022-08-16 15:23:04.261?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.262?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.264?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.264?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.265?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.278?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.278?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.277256]
+?[2m2022-08-16 15:23:04.278?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.280?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.281?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.279992]
+?[2m2022-08-16 15:23:04.281?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 
+    where
+        generatedAlias0.subject=:param0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_ 
+        where
+            question0_.subject=?
+?[2m2022-08-16 15:23:04.294?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.296?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.296?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.297?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.277256]
+?[2m2022-08-16 15:23:04.297?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.277256]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.279992]
+?[2m2022-08-16 15:23:04.302?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.303?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.305?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.307?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.308?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.319?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.319?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.318953]
+?[2m2022-08-16 15:23:04.319?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.322?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.322?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.322045]
+?[2m2022-08-16 15:23:04.322?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 
+    where
+        generatedAlias0.subject like :param0 escape :param1 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_ 
+        where
+            question0_.subject like ? escape ?
+?[2m2022-08-16 15:23:04.326?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb%]
+?[2m2022-08-16 15:23:04.327?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [CHAR] - [\]
+?[2m2022-08-16 15:23:04.328?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.328?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.328?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.318953]
+?[2m2022-08-16 15:23:04.328?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.318953]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.322045]
+?[2m2022-08-16 15:23:04.332?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.333?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.334?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.335?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.336?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.349?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.349?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.348877]
+?[2m2022-08-16 15:23:04.349?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.351?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.352?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.351334]
+?[2m2022-08-16 15:23:04.352?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        count(*) 
+    from
+        Question x */ select
+            count(*) as col_0_0_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.357?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([col_0_0_] : [BIGINT]) - [2]
+Hibernate: 
+    select
+        question0_.id as id1_1_0_,
+        question0_.content as content2_1_0_,
+        question0_.create_date as create_d3_1_0_,
+        question0_.subject as subject4_1_0_ 
+    from
+        question question0_ 
+    where
+        question0_.id=?
+?[2m2022-08-16 15:23:04.359?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.360?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_0_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.361?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_0_] : [TIMESTAMP]) - [2022-08-16T15:23:04.348877]
+?[2m2022-08-16 15:23:04.361?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_0_] : [VARCHAR]) - [sbb가 무엇인가요?]
+Hibernate: 
+    select
+        question0_.id as id1_1_0_,
+        question0_.content as content2_1_0_,
+        question0_.create_date as create_d3_1_0_,
+        question0_.subject as subject4_1_0_ 
+    from
+        question question0_ 
+    where
+        question0_.id=?
+?[2m2022-08-16 15:23:04.363?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.364?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_0_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.364?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_0_] : [TIMESTAMP]) - [2022-08-16T15:23:04.348877]
+?[2m2022-08-16 15:23:04.364?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_0_] : [VARCHAR]) - [sbb가 무엇인가요?]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.367?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.368?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* select
+        count(*) 
+    from
+        Question x */ select
+            count(*) as col_0_0_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.371?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([col_0_0_] : [BIGINT]) - [1]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.376?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.376?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.376?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.351334]
+?[2m2022-08-16 15:23:04.376?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.377?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.378?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.386?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.386?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.386?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.388?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.389?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.388328]
+?[2m2022-08-16 15:23:04.389?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        question0_.id as id1_1_0_,
+        question0_.content as content2_1_0_,
+        question0_.create_date as create_d3_1_0_,
+        question0_.subject as subject4_1_0_ 
+    from
+        question question0_ 
+    where
+        question0_.id=?
+?[2m2022-08-16 15:23:04.391?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.392?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_0_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.392?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_0_] : [TIMESTAMP]) - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.392?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_0_] : [VARCHAR]) - [sbb가 무엇인가요?]
+Hibernate: 
+    /* load com.ll.exam.sbb.question.Question */ select
+        question0_.id as id1_1_1_,
+        question0_.content as content2_1_1_,
+        question0_.create_date as create_d3_1_1_,
+        question0_.subject as subject4_1_1_,
+        answerlist1_.question_id as question4_0_3_,
+        answerlist1_.id as id1_0_3_,
+        answerlist1_.id as id1_0_0_,
+        answerlist1_.content as content2_0_0_,
+        answerlist1_.create_date as create_d3_0_0_,
+        answerlist1_.question_id as question4_0_0_ 
+    from
+        question question0_ 
+    left outer join
+        answer answerlist1_ 
+            on question0_.id=answerlist1_.question_id 
+    where
+        question0_.id=?
+?[2m2022-08-16 15:23:04.396?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.397?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_0_0_] : [INTEGER]) - [null]
+?[2m2022-08-16 15:23:04.397?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.397?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.397?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.397?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([question4_0_3_] : [INTEGER]) - [null]
+Hibernate: 
+    /* update
+        com.ll.exam.sbb.question.Question */ update
+            question 
+        set
+            content=?,
+            create_date=?,
+            subject=? 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.398?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.398?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.398?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [수정된 제목]
+?[2m2022-08-16 15:23:04.398?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [4] as [INTEGER] - [1]
+Hibernate: 
+    select
+        question0_.id as id1_1_0_,
+        question0_.content as content2_1_0_,
+        question0_.create_date as create_d3_1_0_,
+        question0_.subject as subject4_1_0_ 
+    from
+        question question0_ 
+    where
+        question0_.id=?
+?[2m2022-08-16 15:23:04.400?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+?[2m2022-08-16 15:23:04.401?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_0_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.401?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_0_] : [TIMESTAMP]) - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.401?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_0_] : [VARCHAR]) - [수정된 제목]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.385418]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [수정된 제목]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.388328]
+?[2m2022-08-16 15:23:04.405?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.406?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.407?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.408?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.408?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.415?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.415?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.415105]
+?[2m2022-08-16 15:23:04.415?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.418?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.418?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.417692]
+?[2m2022-08-16 15:23:04.418?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.420?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.420?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.419705]
+?[2m2022-08-16 15:23:04.420?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.422?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.422?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.421974]
+?[2m2022-08-16 15:23:04.422?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.415105]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [2]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.427?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.417692]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [3]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.419705]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [4]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.421974]
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.428?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.429?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.430?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [3]
+Hibernate: 
+    select
+        answerlist0_.question_id as question4_0_0_,
+        answerlist0_.id as id1_0_0_,
+        answerlist0_.id as id1_0_1_,
+        answerlist0_.content as content2_0_1_,
+        answerlist0_.create_date as create_d3_0_1_,
+        answerlist0_.question_id as question4_0_1_ 
+    from
+        answer answerlist0_ 
+    where
+        answerlist0_.question_id=?
+?[2m2022-08-16 15:23:04.431?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [4]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.432?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [1]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.432?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [2]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.433?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [3]
+Hibernate: 
+    /* delete com.ll.exam.sbb.question.Question */ delete 
+        from
+            question 
+        where
+            id=?
+?[2m2022-08-16 15:23:04.433?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [INTEGER] - [4]
+Hibernate: 
+    /* dynamic native SQL query */ ALTER TABLE question AUTO_INCREMENT = 1
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.438?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.438?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.437947]
+?[2m2022-08-16 15:23:04.438?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [sbb가 무엇인가요?]
+Hibernate: 
+    /* insert com.ll.exam.sbb.question.Question
+        */ insert 
+        into
+            question
+            (content, create_date, subject) 
+        values
+            (?, ?, ?)
+?[2m2022-08-16 15:23:04.441?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [id는 자동으로 생성되나요?]
+?[2m2022-08-16 15:23:04.441?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [TIMESTAMP] - [2022-08-16T15:23:04.440460]
+?[2m2022-08-16 15:23:04.441?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [3] as [VARCHAR] - [스프링부트 모델 질문입니다.]
+Hibernate: 
+    /* select
+        generatedAlias0 
+    from
+        Question as generatedAlias0 
+    where
+        (
+            generatedAlias0.subject=:param0 
+        ) 
+        and (
+            generatedAlias0.content=:param1 
+        ) */ select
+            question0_.id as id1_1_,
+            question0_.content as content2_1_,
+            question0_.create_date as create_d3_1_,
+            question0_.subject as subject4_1_ 
+        from
+            question question0_ 
+        where
+            question0_.subject=? 
+            and question0_.content=?
+?[2m2022-08-16 15:23:04.444?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [1] as [VARCHAR] - [sbb가 무엇인가요?]
+?[2m2022-08-16 15:23:04.444?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicBinder     ?[0;39m ?[2m:?[0;39m binding parameter [2] as [VARCHAR] - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.445?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([id1_1_] : [INTEGER]) - [1]
+?[2m2022-08-16 15:23:04.445?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([content2_1_] : [VARCHAR]) - [sbb에 대해서 알고 싶습니다.]
+?[2m2022-08-16 15:23:04.445?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([create_d3_1_] : [TIMESTAMP]) - [2022-08-16T15:23:04.437947]
+?[2m2022-08-16 15:23:04.445?[0;39m ?[32mTRACE?[0;39m ?[35m37856?[0;39m ?[2m---?[0;39m ?[2m[    Test worker]?[0;39m ?[36mo.h.type.descriptor.sql.BasicExtractor  ?[0;39m ?[2m:?[0;39m extracted value ([subject4_1_] : [VARCHAR]) - [sbb가 무엇인가요?]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
