@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="답변 리스트">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionForm.java" afterDir="false" />
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="답변 등록">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/form_errors.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -14,20 +14,27 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/47253938-4db8-4154-84a8-fef97ebaf0c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/47253938-4db8-4154-84a8-fef97ebaf0c1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/answer/AnswerController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/answer/AnswerController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/question/QuestionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/question/QuestionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/question/QuestionFrom.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/question/QuestionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/ll/exam/sbb/question/QuestionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/test/com/ll/exam/sbb/QuestionRepositoryTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/com/ll/exam/sbb/QuestionRepositoryTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/question_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/question_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/question_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionFrom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,6 +212,29 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="QuestionRepositoryTests.createManySampleData" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ll.exam.sbb.QuestionRepositoryTests.createManySampleData&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="AnswerRepositoryTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sbb.test" />
       <extension name="coverage">
@@ -215,21 +245,6 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.ll.exam.sbb" />
       <option name="MAIN_CLASS_NAME" value="com.ll.exam.sbb.AnswerRepositoryTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="QuestionRepositoryTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ssb.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ll.exam.sbb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ll.exam.sbb" />
-      <option name="MAIN_CLASS_NAME" value="com.ll.exam.sbb.QuestionRepositoryTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -264,11 +279,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.QuestionRepositoryTests.createManySampleData" />
         <item itemvalue="Gradle.QuestionRepositoryTests" />
         <item itemvalue="Gradle.AnswerRepositoryTests" />
         <item itemvalue="JUnit.AnswerRepositoryTests (1)" />
         <item itemvalue="Spring Boot.SbbApplication" />
-        <item itemvalue="JUnit.QuestionRepositoryTests" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +323,10 @@
       <workItem from="1660624864183" duration="3875000" />
       <workItem from="1660630122320" duration="2936000" />
       <workItem from="1660706839723" duration="3224000" />
-      <workItem from="1660711697308" duration="2581000" />
+      <workItem from="1660711697308" duration="4889000" />
+      <workItem from="1660723536325" duration="13000" />
+      <workItem from="1660724237566" duration="61000" />
+      <workItem from="1660786133126" duration="682000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -485,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660627838870</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="답변 등록">
+      <created>1660714301443</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1660714301443</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +551,8 @@
     <MESSAGE value="리스트 페이지에서 링크걸기" />
     <MESSAGE value="상세 페이지" />
     <MESSAGE value="답변 리스트" />
-    <option name="LAST_COMMIT_MESSAGE" value="답변 리스트" />
+    <MESSAGE value="답변 등록" />
+    <option name="LAST_COMMIT_MESSAGE" value="답변 등록" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

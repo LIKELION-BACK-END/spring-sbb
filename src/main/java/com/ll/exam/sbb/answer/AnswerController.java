@@ -20,17 +20,19 @@ public class AnswerController {
     private final AnswerService answerService;
 
     @PostMapping("/create/{id}")
-    public String detail(Model model, @PathVariable("id") Integer id, @Valid AnswerForm answerForm, BindingResult bindingResult) {
+    public String detail(Model model, @PathVariable int id, @Valid AnswerForm answerForm, BindingResult bindingResult) {
 
         Question question = this.questionService.getQuestion(id);
 
-        if (bindingResult.hasErrors()) {
+        if ( bindingResult.hasErrors() ) {
             model.addAttribute("question", question);
             return "question_detail";
         }
 
-        this.answerService.create(question, answerForm.getContent());
+        // 답변 등록 시작
+        answerService.create(question, answerForm.getContent());
+        // 답변 등록 끝
 
-        return String.format("redirect:/question/detail/%s", id);
+        return "redirect:/question/detail/%d".formatted(id);
     }
 }
