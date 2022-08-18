@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="역순 정렬">
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="게시물에 일련번호 추가하기">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" afterDir="false" />
     </list>
@@ -298,7 +298,7 @@
       <workItem from="1660711697308" duration="4889000" />
       <workItem from="1660723536325" duration="13000" />
       <workItem from="1660724237566" duration="61000" />
-      <workItem from="1660786133126" duration="2105000" />
+      <workItem from="1660786133126" duration="2772000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -496,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660787383210</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="게시물에 일련번호 추가하기">
+      <created>1660788315370</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1660788315370</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +521,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ResponseBody" />
     <MESSAGE value="요청 관련 문제" />
     <MESSAGE value="switch 문 활용" />
     <MESSAGE value="세션저장, 세션에서 정보 얻기" />
@@ -539,7 +545,8 @@
     <MESSAGE value="답변 등록" />
     <MESSAGE value="페이지 메뉴 범위 지정" />
     <MESSAGE value="역순 정렬" />
-    <option name="LAST_COMMIT_MESSAGE" value="역순 정렬" />
+    <MESSAGE value="게시물에 일련번호 추가하기" />
+    <option name="LAST_COMMIT_MESSAGE" value="게시물에 일련번호 추가하기" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
