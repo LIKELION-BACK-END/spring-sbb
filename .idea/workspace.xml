@@ -4,20 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="페이지 메뉴 범위 지정">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="역순 정렬">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/com.ll.exam.sbb.QuestionRepositoryTests.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/classes/com.ll.exam.sbb.QuestionRepositoryTests.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ll.exam.sbb.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/packages/com.ll.exam.sbb.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-com.ll.exam.sbb.QuestionRepositoryTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/TEST-com.ll.exam.sbb.QuestionRepositoryTests.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/question_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/resources/templates/question_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -309,7 +298,7 @@
       <workItem from="1660711697308" duration="4889000" />
       <workItem from="1660723536325" duration="13000" />
       <workItem from="1660724237566" duration="61000" />
-      <workItem from="1660786133126" duration="1182000" />
+      <workItem from="1660786133126" duration="2105000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -500,7 +489,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660786827597</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="역순 정렬">
+      <created>1660787383210</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1660787383210</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -518,7 +514,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="프로젝트 생성" />
     <MESSAGE value="ResponseBody" />
     <MESSAGE value="요청 관련 문제" />
     <MESSAGE value="switch 문 활용" />
@@ -543,7 +538,8 @@
     <MESSAGE value="답변 리스트" />
     <MESSAGE value="답변 등록" />
     <MESSAGE value="페이지 메뉴 범위 지정" />
-    <option name="LAST_COMMIT_MESSAGE" value="페이지 메뉴 범위 지정" />
+    <MESSAGE value="역순 정렬" />
+    <option name="LAST_COMMIT_MESSAGE" value="역순 정렬" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
