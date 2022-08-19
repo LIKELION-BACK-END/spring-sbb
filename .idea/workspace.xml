@@ -4,34 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="답변 개수 표시">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/SignupEmailDuplicatedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/SignupUsernameDuplicatedException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/SiteUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserCreateForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/login_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/signup_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/47253938-4db8-4154-84a8-fef97ebaf0c1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/47253938-4db8-4154-84a8-fef97ebaf0c1.xml" afterDir="false" />
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/navbar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_form.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +144,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SbbApplication (1)">
+  <component name="RunManager" selected="Gradle.AnswerRepositoryTests">
     <configuration name="AnswerRepositoryTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -278,9 +258,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.AnswerRepositoryTests" />
         <item itemvalue="Gradle.QuestionRepositoryTests.createManySampleData" />
         <item itemvalue="Gradle.QuestionRepositoryTests" />
-        <item itemvalue="Gradle.AnswerRepositoryTests" />
         <item itemvalue="JUnit.AnswerRepositoryTests (1)" />
         <item itemvalue="Spring Boot.SbbApplication" />
       </list>
@@ -328,7 +308,7 @@
       <workItem from="1660786133126" duration="4812000" />
       <workItem from="1660790977784" duration="3291000" />
       <workItem from="1660809538086" duration="98000" />
-      <workItem from="1660872659606" duration="1820000" />
+      <workItem from="1660872659606" duration="7163000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -540,7 +520,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660788946207</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글">
+      <created>1660875262018</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1660875262018</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +549,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="switch 문 활용" />
     <MESSAGE value="세션저장, 세션에서 정보 얻기" />
     <MESSAGE value="addArticle" />
     <MESSAGE value="getArticle" />
@@ -587,7 +573,8 @@
     <MESSAGE value="역순 정렬" />
     <MESSAGE value="게시물에 일련번호 추가하기" />
     <MESSAGE value="답변 개수 표시" />
-    <option name="LAST_COMMIT_MESSAGE" value="답변 개수 표시" />
+    <MESSAGE value="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글" />
+    <option name="LAST_COMMIT_MESSAGE" value="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
