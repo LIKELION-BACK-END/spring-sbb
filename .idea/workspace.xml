@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글">
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/Answer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +142,7 @@
       <recent name="$PROJECT_DIR$/src/main/resources/static" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AnswerRepositoryTests">
+  <component name="RunManager" selected="Spring Boot.SbbApplication (1)">
     <configuration name="AnswerRepositoryTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -159,6 +157,29 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.ll.exam.sbb.AnswerRepositoryTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="AnswerRepositoryTests.question으로부터_관련된_질문들_조회" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ll.exam.sbb.AnswerRepositoryTests.question으로부터_관련된_질문들_조회&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,20 +235,28 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="AnswerRepositoryTests (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sbb.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ll.exam.sbb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ll.exam.sbb" />
-      <option name="MAIN_CLASS_NAME" value="com.ll.exam.sbb.AnswerRepositoryTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="UserServiceTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ll.exam.sbb.UserServiceTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
     <configuration name="SbbApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="sbb.main" />
@@ -236,21 +265,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SbbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="ssb.main" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ll.exam.sbb.SbbApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ll.exam.sbb.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SsbApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="ssb.main" />
+      <option name="ACTIVE_PROFILES" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ll.exam.ssb.SsbApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -258,11 +274,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AnswerRepositoryTests" />
-        <item itemvalue="Gradle.QuestionRepositoryTests.createManySampleData" />
+        <item itemvalue="Gradle.UserServiceTests" />
         <item itemvalue="Gradle.QuestionRepositoryTests" />
-        <item itemvalue="JUnit.AnswerRepositoryTests (1)" />
-        <item itemvalue="Spring Boot.SbbApplication" />
+        <item itemvalue="Gradle.AnswerRepositoryTests" />
+        <item itemvalue="Gradle.AnswerRepositoryTests.question으로부터_관련된_질문들_조회" />
+        <item itemvalue="Gradle.QuestionRepositoryTests.createManySampleData" />
       </list>
     </recent_temporary>
   </component>
@@ -308,7 +324,7 @@
       <workItem from="1660786133126" duration="4812000" />
       <workItem from="1660790977784" duration="3291000" />
       <workItem from="1660809538086" duration="98000" />
-      <workItem from="1660872659606" duration="7163000" />
+      <workItem from="1660872659606" duration="8144000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -527,7 +543,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660875262018</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행">
+      <created>1660885823138</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1660885823138</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +572,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="세션저장, 세션에서 정보 얻기" />
     <MESSAGE value="addArticle" />
     <MESSAGE value="getArticle" />
     <MESSAGE value="객체 조립시에 path variable 도 사용" />
@@ -574,7 +596,8 @@
     <MESSAGE value="게시물에 일련번호 추가하기" />
     <MESSAGE value="답변 개수 표시" />
     <MESSAGE value="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글" />
-    <option name="LAST_COMMIT_MESSAGE" value="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글" />
+    <MESSAGE value="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행" />
+    <option name="LAST_COMMIT_MESSAGE" value="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
