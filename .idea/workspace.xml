@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행">
+    <list default="true" id="4422272d-8a6f-472e-835d-38572cafd8af" name="Changes" comment="테스트케이스에서 Question, Answer 저장시 작성자 정보 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/question/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/question_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/answer/AnswerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ll/exam/sbb/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/AnswerRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/QuestionRepositoryTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/ll/exam/sbb/UserServiceTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -325,6 +327,10 @@
       <workItem from="1660790977784" duration="3291000" />
       <workItem from="1660809538086" duration="98000" />
       <workItem from="1660872659606" duration="8144000" />
+      <workItem from="1660887602690" duration="837000" />
+      <workItem from="1660920013158" duration="5000" />
+      <workItem from="1660988547067" duration="12000" />
+      <workItem from="1661140934747" duration="366000" />
     </task>
     <task id="LOCAL-00001" summary="프로젝트 생성">
       <created>1659924488887</created>
@@ -550,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660885823138</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="테스트케이스에서 Question, Answer 저장시 작성자 정보 추가">
+      <created>1660887836775</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1660887836775</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="addArticle" />
     <MESSAGE value="getArticle" />
     <MESSAGE value="객체 조립시에 path variable 도 사용" />
     <MESSAGE value="h2 database 정보" />
@@ -597,7 +609,8 @@
     <MESSAGE value="답변 개수 표시" />
     <MESSAGE value="로그인 상태에 따라서 상단바에 로그인/로그아웃 버튼 토글" />
     <MESSAGE value="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행" />
-    <option name="LAST_COMMIT_MESSAGE" value="회원관련 테스트케이스를 실행하기 전, 답변, 질문, 회원 순으로 삭제, 회원 2명 생성 후 진행" />
+    <MESSAGE value="테스트케이스에서 Question, Answer 저장시 작성자 정보 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="테스트케이스에서 Question, Answer 저장시 작성자 정보 추가" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
