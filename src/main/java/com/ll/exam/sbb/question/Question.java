@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import javax.persistence.ManyToMany;
 
 @Getter
 @Setter
@@ -23,6 +25,7 @@ public class Question {
     @Column(columnDefinition = "TEXT")
     private String content;
     private LocalDateTime createDate;
+    private LocalDateTime modifyDate;
 
     @OneToMany(mappedBy = "question", cascade = {CascadeType.ALL})
     private List<Answer> answerList = new ArrayList<>();
@@ -35,5 +38,6 @@ public class Question {
         getAnswerList().add(answer);
     }
 
-    private LocalDateTime modifyDate;
+    @ManyToMany
+    Set<SiteUser> voter;
 }

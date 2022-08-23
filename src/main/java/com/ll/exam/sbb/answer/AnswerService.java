@@ -7,7 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -24,22 +23,17 @@ public class AnswerService {
         answerRepository.save(answer);
     }
 
-    public Answer getAnswer(Integer id) {
-        Optional<Answer> answer = this.answerRepository.findById(Long.valueOf(id));
-        if (answer.isPresent()) {
-            return answer.get();
-        } else {
-            throw new DataNotFoundException("answer not found");
-        }
+    public Answer getAnswer(Long id) {
+        return answerRepository.findById(id).orElseThrow(() -> new DataNotFoundException("answer not found"));
     }
 
     public void modify(Answer answer, String content) {
         answer.setContent(content);
         answer.setModifyDate(LocalDateTime.now());
-        this.answerRepository.save(answer);
+        answerRepository.save(answer);
     }
 
     public void delete(Answer answer) {
-        this.answerRepository.delete(answer);
+        answerRepository.delete(answer);
     }
 }
